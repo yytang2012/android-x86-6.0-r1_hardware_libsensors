@@ -156,7 +156,7 @@ struct timeval lastPoll[] = { {0,0}, {0,0}, {0,0}, {0,0},
 pthread_t daemon_thread;
 static const struct sensor_t sSensorList[] = {
 
-    {
+    { // 0
         name: "SVMP Remote Accelerometer",
         vendor: "SVMP",
         version: 1,
@@ -171,11 +171,11 @@ static const struct sensor_t sSensorList[] = {
         stringType: SENSOR_STRING_TYPE_ACCELEROMETER,
         requiredPermission: "",
         maxDelay: 0,
-        flags: SENSOR_FLAG_ONE_SHOT_MODE,
+        flags: SENSOR_FLAG_CONTINUOUS_MODE,
         reserved: { }
     },
 
-    {
+    { // 1
         name: "SVMP Remote Magnetic Field Sensor",
         vendor: "SVMP",
         version: 1,
@@ -190,11 +190,11 @@ static const struct sensor_t sSensorList[] = {
         stringType: SENSOR_STRING_TYPE_MAGNETIC_FIELD,
         requiredPermission: "",
         maxDelay: 0,
-        flags: SENSOR_FLAG_ONE_SHOT_MODE,
+        flags: SENSOR_FLAG_CONTINUOUS_MODE,
         reserved: { }
     },
 
-    {
+    { // 2
         name: "SVMP Remote Orientation Sensor",
         vendor: "SVMP",
         version: 1,
@@ -209,11 +209,11 @@ static const struct sensor_t sSensorList[] = {
         stringType: SENSOR_STRING_TYPE_ORIENTATION,
         requiredPermission: "",
         maxDelay: 0,
-        flags: SENSOR_FLAG_ONE_SHOT_MODE,
+        flags: SENSOR_FLAG_CONTINUOUS_MODE,
         reserved: { }
     },
 
-    {
+    { // 3
         name: "SVMP Remote Gyroscope",
         vendor: "SVMP",
         version: 1,
@@ -228,9 +228,180 @@ static const struct sensor_t sSensorList[] = {
         stringType: SENSOR_STRING_TYPE_GYROSCOPE,
         requiredPermission: "",
         maxDelay: 0,
+        flags: SENSOR_FLAG_CONTINUOUS_MODE,
+        reserved: { }
+    },
+
+    { // 4
+        name: "SVMP Remote Light Sensor",
+        vendor: "SVMP",
+        version: 1,
+        handle: SENSOR_HANDLE_LIGHT,
+        type: SENSOR_TYPE_LIGHT,
+        maxRange: SENSOR_MAX_LIGHT,
+        resolution: SENSOR_RES_LIGHT,
+        power: 0.25f,
+        minDelay: 0,
+        fifoReservedEventCount: 0,
+        fifoMaxEventCount: 0,
+        stringType: SENSOR_STRING_TYPE_LIGHT,
+        requiredPermission: "",
+        maxDelay: 0,
+        flags: SENSOR_FLAG_CONTINUOUS_MODE,
+        reserved: { }
+    },
+
+    { // 5
+        name: "SVMP Remote Pressure Sensor",
+        vendor: "SVMP",
+        version: 1,
+        handle: SENSOR_HANDLE_PRESSURE,
+        type: SENSOR_TYPE_PRESSURE,
+        maxRange: SENSOR_MAX_PRESSURE,
+        resolution: SENSOR_RES_PRESSURE,
+        power: 0.25f,
+        minDelay: 0,
+        fifoReservedEventCount: 0,
+        fifoMaxEventCount: 0,
+        stringType: SENSOR_STRING_TYPE_PRESSURE,
+        requiredPermission: "",
+        maxDelay: 0,
         flags: SENSOR_FLAG_ONE_SHOT_MODE,
         reserved: { }
     },
+
+//    { // 7
+//            name: "SVMP Remote Temperature Sensor",
+//            vendor: "SVMP",
+//            version: 1,
+//            handle: SENSOR_HANDLE_TEMPERATURE,
+//            type: SENSOR_TYPE_TEMPERATURE,
+//            maxRange: SENSOR_MAX_TEMPERATURE,
+//            resolution: SENSOR_RES_TEMPERATURE,
+//            power: 0.25f,
+//            minDelay: 0,
+//            fifoReservedEventCount: 0,
+//            fifoMaxEventCount: 0,
+//            stringType: SENSOR_STRING_TYPE_TEMPERATURE,
+//            requiredPermission: "",
+//            maxDelay: 0,
+//            flags: SENSOR_FLAG_CONTINUOUS_MODE,
+//            reserved: { }
+//    },
+
+    { // 6
+            name: "SVMP Remote Proximity Sensor",
+            vendor: "SVMP",
+            version: 1,
+            handle: SENSOR_HANDLE_PROXIMITY,
+            type: SENSOR_TYPE_PROXIMITY,
+            maxRange: SENSOR_MAX_PROXIMITY,
+            resolution: SENSOR_RES_PROXIMITY,
+            power: 0.25f,
+            minDelay: 0,
+            fifoReservedEventCount: 0,
+            fifoMaxEventCount: 0,
+            stringType: SENSOR_STRING_TYPE_TEMPERATURE,
+            requiredPermission: "",
+            maxDelay: 0,
+            flags: SENSOR_FLAG_CONTINUOUS_MODE,
+            reserved: { }
+    },
+
+    { // 7
+            name: "SVMP Remote Gravity Sensor",
+            vendor: "SVMP",
+            version: 1,
+            handle: SENSOR_HANDLE_GRAVITY,
+            type: SENSOR_TYPE_GRAVITY,
+            maxRange: SENSOR_MAX_GRAVITY,
+            resolution: SENSOR_RES_GRAVITY,
+            power: 0.25f,
+            minDelay: 0,
+            fifoReservedEventCount: 0,
+            fifoMaxEventCount: 0,
+            stringType: SENSOR_STRING_TYPE_GRAVITY,
+            requiredPermission: "",
+            maxDelay: 0,
+            flags: SENSOR_FLAG_CONTINUOUS_MODE,
+            reserved: { }
+    },
+
+    { // 8
+            name: "SVMP Remote Linear Acceleration Sensor",
+            vendor: "SVMP",
+            version: 1,
+            handle: SENSOR_HANDLE_LINEAR_ACCELERATION,
+            type: SENSOR_TYPE_LINEAR_ACCELERATION,
+            maxRange: SENSOR_MAX_LINEAR_ACCELERATION,
+            resolution: SENSOR_RES_LINEAR_ACCELERATION,
+            power: 0.25f,
+            minDelay: 0,
+            fifoReservedEventCount: 0,
+            fifoMaxEventCount: 0,
+            stringType: SENSOR_STRING_TYPE_LINEAR_ACCELERATION,
+            requiredPermission: "",
+            maxDelay: 0,
+            flags: SENSOR_FLAG_CONTINUOUS_MODE,
+            reserved: { }
+    },
+
+    { // 9
+            name: "SVMP Remote Rotation Vector Sensor",
+            vendor: "SVMP",
+            version: 1,
+            handle: SENSOR_HANDLE_ROTATION_VECTOR,
+            type: SENSOR_TYPE_ROTATION_VECTOR,
+            maxRange: SENSOR_MAX_ROTATION_VECTOR,
+            resolution: SENSOR_RES_ROTATION_VECTOR,
+            power: 0.25f,
+            minDelay: 0,
+            fifoReservedEventCount: 0,
+            fifoMaxEventCount: 0,
+            stringType: SENSOR_STRING_TYPE_ROTATION_VECTOR,
+            requiredPermission: "",
+            maxDelay: 0,
+            flags: SENSOR_FLAG_CONTINUOUS_MODE,
+            reserved: { }
+    },
+
+//    { // 12
+//            name: "SVMP Remote Relative Humidity Sensor",
+//            vendor: "SVMP",
+//            version: 1,
+//            handle: SENSOR_HANDLE_RELATIVE_HUMIDITY,
+//            type: SENSOR_TYPE_RELATIVE_HUMIDITY,
+//            maxRange: SENSOR_MAX_RELATIVE_HUMIDITY,
+//            resolution: SENSOR_RES_RELATIVE_HUMIDITY,
+//            power: 0.25f,
+//            minDelay: 0,
+//            fifoReservedEventCount: 0,
+//            fifoMaxEventCount: 0,
+//            stringType: SENSOR_STRING_TYPE_RELATIVE_HUMIDITY,
+//            requiredPermission: "",
+//            maxDelay: 0,
+//            flags: SENSOR_FLAG_CONTINUOUS_MODE,
+//            reserved: { }
+//    },
+//
+//    { // 13
+//            name: "SVMP Remote Ambient Temperature Sensor",
+//            vendor: "SVMP",
+//            version: 1,
+//            handle: SENSOR_HANDLE_AMBIENT_TEMPERATURE,
+//            type: SENSOR_TYPE_AMBIENT_TEMPERATURE,
+//            maxRange: SENSOR_MAX_AMBIENT_TEMPERATURE,
+//            resolution: SENSOR_RES_AMBIENT_TEMPERATURE,
+//            power: 0.25f,
+//            minDelay: 0,
+//            fifoReservedEventCount: 0,
+//            fifoMaxEventCount: 0,
+//            stringType: SENSOR_STRING_TYPE_AMBIENT_TEMPERATURE,
+//            requiredPermission: "",
+//            maxDelay: 0,
+//            flags: SENSOR_FLAG_CONTINUOUS_MODE,
+//            reserved: { }
+//    },
 };
 
 /////////////////////
