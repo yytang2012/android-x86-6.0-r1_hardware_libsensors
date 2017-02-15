@@ -56,7 +56,7 @@ limitations under the License.
 #define max(x,y) ((x) > (y) ? (x) : (y))
 
 /*****************************************************************************/
-#define SVMPDEBUG 1
+#define SVMPDEBUG 0
 
 struct svmp_sensor_event_t {
 	int type;
